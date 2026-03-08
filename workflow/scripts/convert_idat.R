@@ -4,20 +4,20 @@ suppressPackageStartupMessages({
   library(sesame)
 })
 
-args <- commandArgs(trailingOnly = TRUE)
+# args <- commandArgs(trailingOnly = TRUE)
 
-if (length(args) < 2) {
-  stop(
-    paste(
-      "Usage:",
-      "Rscript convert_idat.R <idat_dir> <out_dir> <sample_sheet_path>"
-    )
-  )
-}
+# if (length(args) < 2) {
+#   stop(
+#     paste(
+#       "Usage:",
+#       "Rscript convert_idat.R <idat_dir> <out_dir> <sample_sheet_path>"
+#     )
+#   )
+# }
 
-idat_dir  <- args[1]
-out_dir   <- args[2]
-sample_sheet_path <- args[3]
+idat_dir  <- snakemake@input[["idat_dir"]]
+out_dir   <- snakemake@output[["out_dir"]]
+sample_sheet_path <- snakemake@input[["sample_sheet_path"]]
 prep_code <- "QCDPB"
 
 if (!file.exists(sample_sheet_path)) {

@@ -1,0 +1,14 @@
+name: generate_tsne
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - scipy
+  - pip

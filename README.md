@@ -1,13 +1,13 @@
-# Snakemake workflow: `<name>`
+# Snakemake workflow: IDAT to Graph
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥8.0.0-brightgreen.svg)](https://snakemake.github.io)
 [![GitHub actions status](https://github.com/<owner>/<repo>/workflows/Tests/badge.svg?branch=main)](https://github.com/<owner>/<repo>/actions?query=branch%3Amain+workflow%3ATests)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![workflow catalog](https://img.shields.io/badge/Snakemake%20workflow%20catalog-darkgreen)](https://snakemake.github.io/snakemake-workflow-catalog/docs/workflows/<owner>/<repo>)
 
-A Snakemake workflow for `<description>`
+A Snakemake workflow for creating graph visualization of DNA methylation data.
 
-- [Snakemake workflow: `<name>`](#snakemake-workflow-name)
+- [Snakemake workflow: `IDAT to Graph`](#snakemake-workflow-idat-to-graph)
   - [Usage](#usage)
   - [Deployment options](#deployment-options)
   - [Workflow profiles](#workflow-profiles)

@@ -1,4 +1,4 @@
-name: conver_idat
+name: convert_idat
 
 channels:
   - conda-forge

@@ -3,27 +3,11 @@ description: main configuration schema for the workflow
 properties:
   sample_sheet:
     type: string
-    description: path to sample-sheet TSV file
-
-  get_genome:
-    type: object
-    properties:
-      ncbi_ftp:
-        type: string
-        description: URL for genome retrieval
-    required: ["ncbi_ftp"]
-
-  simulate_reads:
-    type: object
-    properties:
-      read_length:
-        type: number
-        description: length of target reads in bp
-      read_number:
-        type: number
-        description: number of total reads to be simulated
+    description: path to sample-sheet CSV file
+  sample_folder:
+    type: string
+    description: path to sample folder
 
 required:
   - sample_sheet
-  - get_genome
-  - simulate_reads
+  - sample_folder
