@@ -21,6 +21,8 @@ rule generate_tsne:
         "results/generate_tsne/tsne.pdf",
     conda:
         "../envs/generate_tsne.yaml"
+    params:
+        sample_sheet=lookup(within=config, dpath="sample_sheet")
     log:
         "results/generate_tsne/generate_tsne.log",
     script:

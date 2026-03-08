@@ -8,6 +8,7 @@ import os
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.impute import SimpleImputer
 
@@ -65,18 +66,39 @@ tsne = TSNE(
 
 X_tsne = tsne.fit_transform(X_pca)
 
-# plot
+# load sample sheet
 
-plt.figure(figsize=(8, 6))
+sample_sheet = pd.read_csv(snakemake.params["sample_sheet"])
 
-plt.scatter(X_tsne[:, 0], X_tsne[:, 1])
+# create dictionary: sample -> diagnosis
+sample_to_diag = dict(zip(sample_sheet["sample_id"], sample_sheet["diagnosis"]))
 
-for i, sample in enumerate(X.index):
-    plt.text(X_tsne[i, 0], X_tsne[i, 1], sample, fontsize=8)
+# create list of diagnoses aligned with X index
+diagnoses = [sample_to_diag[s.split(".")[0]] for s in X.index]
+
+# tSNE plot
+tsne_df = pd.DataFrame({
+    "tSNE1": X_tsne[:,0],
+    "tSNE2": X_tsne[:,1],
+    "Diagnosis": diagnoses
+})
+
+plt.figure(figsize=(8,6))
+
+sns.scatterplot(
+    data=tsne_df,
+    x="tSNE1",
+    y="tSNE2",
+    hue="Diagnosis",
+    palette="tab10",
+    s=80
+)
 
 plt.title("t-SNE of DNA methylation samples")
 plt.xlabel("tSNE-1")
 plt.ylabel("tSNE-2")
 
+plt.legend(bbox_to_anchor=(1.05,1), loc="upper left")
+
 plt.tight_layout()
-plt.savefig(snakemake.output[0])
+plt.savefig(snakemake.output[0], dpi=300)
