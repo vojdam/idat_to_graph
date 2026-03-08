@@ -27,3 +27,18 @@ rule generate_tsne:
         "results/generate_tsne/generate_tsne.log",
     script:
         "../scripts/generate_tsne.py"
+
+# generate umap from beta values
+rule generate_umap:
+    input:
+        rules.convert_idat.output.out_dir,
+    output:
+        "results/generate_umap/umap.pdf",
+    conda:
+        "../envs/generate_umap.yaml"
+    params:
+        sample_sheet=lookup(within=config, dpath="sample_sheet")
+    log:
+        "results/generate_umap/generate_umap.log",
+    script:
+        "../scripts/generate_umap.py"

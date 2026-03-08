@@ -34,4 +34,5 @@ onerror:
 rule all:
     input:
         "results/generate_tsne/tsne.pdf",
+        "results/generate_umap/umap.pdf"
     default_target: True
