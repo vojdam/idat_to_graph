@@ -60,7 +60,7 @@ print("PCA output:", X_pca.shape)
 
 # tSNE generation
 tsne = TSNE(
-    n_components=2, perplexity=TSNE_PERPLEXITY, random_state=RANDOM_STATE, n_iter=1000
+    n_components=2, perplexity=TSNE_PERPLEXITY, random_state=RANDOM_STATE, max_iter=1000
 )
 
 X_tsne = tsne.fit_transform(X_pca)
@@ -80,4 +80,3 @@ plt.ylabel("tSNE-2")
 
 plt.tight_layout()
 plt.savefig(snakemake.output[0])
-

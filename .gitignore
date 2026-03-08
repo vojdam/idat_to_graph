@@ -4,6 +4,8 @@ logs/**
 .snakemake
 .snakemake/**
 .test/results/*
+.test/config/samples/*
+.test/config/create_sample_sheet.py
 workflow/notebooks/.ipynb_checkpoints/**
 **/.Rhistory
 **/*.Rproj

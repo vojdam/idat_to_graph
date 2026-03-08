@@ -2,14 +2,14 @@
 rule convert_idat:
     input:
         idat_dir=lookup(within=config, dpath="sample_folder"),
-        sample_sheet_path=lookup(within=config, dpath="sample_sheet"),
+        sample_sheet_path=lookup(within=config, dpath="sample_sheet")
     output:
-        out_dir=directory("results/convert_idat/beta_values"),
+        out_dir=directory("results/convert_idat/beta_values")
     conda:
         "../envs/convert_idat.yaml"
     log:
-        "results/convert_idat/convert_idat.log",
-    shell:
+        "results/convert_idat/convert_idat.log"
+    script:
         "../scripts/convert_idat.R"
 
 

@@ -7,5 +7,10 @@ channels:
 
 dependencies:
   - r-base=4.5.*
+  - r-biocmanager
+  - r-remotes
+  - compilers
+  - make
+  - pkg-config
   - bioconductor-sesame=1.28.1
   - bioconductor-sesamedata=1.28.0
