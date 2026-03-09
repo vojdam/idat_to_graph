@@ -1,2 +1,2 @@
 sample_sheet: ".test/config/sample_sheet.csv"
-sample_folder: "/home/vojdam/_part2/sarc_metyl/samples/"
+sample_folder: ".test/config/samples"

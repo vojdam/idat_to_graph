@@ -1,23 +1,22 @@
 # Snakemake workflow: IDAT to Graph
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥8.0.0-brightgreen.svg)](https://snakemake.github.io)
-[![GitHub actions status](https://github.com/<owner>/<repo>/workflows/Tests/badge.svg?branch=main)](https://github.com/<owner>/<repo>/actions?query=branch%3Amain+workflow%3ATests)
+[![GitHub actions status](https://github.com/vojdam/idat_to_graph/workflows/Tests/badge.svg?branch=main)](https://github.com/vojdam/idat_to_graph/actions?query=branch%3Amain+workflow%3ATests)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
-[![workflow catalog](https://img.shields.io/badge/Snakemake%20workflow%20catalog-darkgreen)](https://snakemake.github.io/snakemake-workflow-catalog/docs/workflows/<owner>/<repo>)
+[![workflow catalog](https://img.shields.io/badge/Snakemake%20workflow%20catalog-darkgreen)](https://snakemake.github.io/snakemake-workflow-catalog/docs/workflows/cojdam/idat_to_graph)
 
-A Snakemake workflow for creating graph visualization of DNA methylation data.
+A Snakemake workflow for creating graph visualizations of DNA methylation data.
 
 - [Snakemake workflow: `IDAT to Graph`](#snakemake-workflow-idat-to-graph)
   - [Usage](#usage)
   - [Deployment options](#deployment-options)
-  - [Workflow profiles](#workflow-profiles)
   - [Authors](#authors)
   - [References](#references)
   - [TODO](#todo)
 
 ## Usage
 
-The usage of this workflow is described in the [Snakemake Workflow Catalog](https://snakemake.github.io/snakemake-workflow-catalog/docs/workflows/<owner>/<repo>).
+The usage of this workflow is described in the [Snakemake Workflow Catalog](https://snakemake.github.io/snakemake-workflow-catalog/docs/workflows/vojdam/idat_to_graph).
 
 Detailed information about input data and workflow configuration can also be found in the [`config/README.md`](config/README.md).
 
@@ -44,24 +43,11 @@ To run the workflow with test files using **conda**:
 snakemake --cores 2 --sdm conda --directory .test
 ```
 
-To run the workflow with **apptainer** / **singularity**, add a link to a container registry in the `Snakefile`, for example `container: "oras://ghcr.io/<user>/<repository>:<version>"` for Github's container registry.
-Run the workflow with:
-
-```bash
-snakemake --cores 2 --sdm conda apptainer --directory .test
-```
-
-## Workflow profiles
-
-The `profiles/` directory can contain any number of [workflow-specific profiles](https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles) that users can choose from.
-The [profiles `README.md`](profiles/README.md) provides more details.
-
 ## Authors
 
-- Firstname Lastname
-  - Affiliation
-  - ORCID profile
-  - home page
+- Vojtěch Damian
+  - Department of Pathology and Molecular Medicine, Second Faculty of Medicine, Charles University, Motol and Homolka University Hospital
+  - [ORCID profile](https://orcid.org/0009-0001-1782-5864)
 
 ## References
 
@@ -69,9 +55,4 @@ The [profiles `README.md`](profiles/README.md) provides more details.
 
 ## TODO
 
-- Replace `<owner>` and `<repo>` everywhere in the template with the correct user name/organization, and the repository name. The workflow will be automatically added to the [snakemake workflow catalog](https://snakemake.github.io/snakemake-workflow-catalog/index.html) once it is publicly available on Github.
-- Replace `<name>` with the workflow name (can be the same as `<repo>`).
-- Replace `<description>` with a description of what the workflow does.
-- Update the [deployment](#deployment-options), [authors](#authors) and [references](#references) sections.
-- Update the `README.md` badges. Add or remove badges for `conda`/`singularity`/`apptainer` usage depending on the workflow's [deployment](#deployment-options) options.
-- Do not forget to also adjust the configuration-specific `config/README.md` file.
+- Add an option to choose between using beta values and M-values  
