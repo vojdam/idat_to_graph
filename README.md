@@ -55,4 +55,5 @@ snakemake --cores 2 --sdm conda --directory .test
 
 ## TODO
 
-- Add an option to choose between using beta values and M-values  
+- Add an option to choose between using beta values and M-values
+- Add report support
